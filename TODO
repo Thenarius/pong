@@ -1,0 +1,2 @@
+- Fix the bug Vinu reported with the ball behind paddles.
+- Initialize the ball with a random vector.
