@@ -38,20 +38,20 @@ function Entity(x, y, width, height, sprite, init, update)
 	entity.init();
 
 	entities.push(entity);
+}
 
-	function update() {
-		var i, temp;
-		canvas.clearRect(0, 0, WIDTH, HEIGHT);
+function update() {
+	var i, temp;
+	canvas.clearRect(0, 0, WIDTH, HEIGHT);
 
-		for (i=0; i<entities.length; i++) {
-			temp = entities[i];
-			if (temp.update) {
-				temp.update();
-			}
-			context.drawImage(temp.sprite, temp.x, temp.y, temp.width, temp.height);
+	for (i=0; i<entities.length; i++) {
+		temp = entities[i];
+		if (temp.update) {
+			temp.update();
 		}
-		setInterval(update, FPS);
+		context.drawImage(temp.sprite, temp.x, temp.y, temp.width, temp.height);
 	}
+	setInterval(update, FPS);
 }
 
 var ball = new Entity(WIDTH/2, HEIGHT/2, "ball", 
